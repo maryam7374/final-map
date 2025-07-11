@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Map Container */
+#map {
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    right: 0; 
+    left: 0;
+}
+
+/* Restaurant Info Popup Styles */
+.restaurant-info {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cuisine-type {
+    color: #555;
+    font-size: 0.9em;
+}
+
+.veg-info {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Legend Styles */
+.info.legend {
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.legend-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid #000;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Map Title Styles */
+.map-title-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.map-title {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e0e0e0;
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+}
+
+.map-title h2 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #333;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    letter-spacing: 0.5px;
+}
+
+.title-icon {
+    font-size: 1.6em;
+    color: #e74c3c;
+}
+
+/* Leaflet Control Customizations */
+.leaflet-control-layers {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+}
+
+.leaflet-control-layers-toggle {
+    border-radius: 4px !important;
+}
+
+/* Filter Control Styles */
+.filter-control {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+}
+
+.filter-control select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.filter-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.filter-control button {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    background: #4ECDC4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-control button:hover {
+    background: #3dbeb5;
+}
+
+/* Metadata Panel Styles */
+.metadata-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+.metadata-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.metadata-btn i {
+    color: white;
+    font-size: 20px;
+}
+
+.metadata-panel {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 15px;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    backdrop-filter: blur(5px);
+}
+
+.metadata-panel.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.metadata-panel h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metadata-panel h3 i {
+    color: #4ECDC4;
+}
+
+.metadata-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.metadata-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.metadata-table tr:last-child {
+    border-bottom: none;
+}
+
+.metadata-table th {
+    text-align: left;
+    padding: 8px 5px 8px 0;
+    color: #666;
+    font-weight: normal;
+    width: 100px;
+    vertical-align: top;
+}
+
+.metadata-table td {
+    padding: 8px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Custom Scale Control */
+.leaflet-control-scale-custom {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin-left: 50px !important;
+}
+
+.leaflet-control-scale-custom .leaflet-control-scale-line {
+    background: none !important;
+    border: 2px solid #333 !important;
+    border-top: none !important;
+    color: #333 !important;
+    font-weight: bold !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    padding-bottom: 2px !important;
+}
+
+/* Locate Control */
+.leaflet-control-locate {
+    background: white;
+    border-radius: 4px;
+    padding: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.leaflet-control-locate a {
+    display: block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    color: #333;
+}
+
+.leaflet-control-locate a:hover {
+    color: #2c3e50;
+}
+
+.leaflet-control-locate.active {
+    background: #4ECDC4;
+}
+
+.leaflet-control-locate.active a {
+    color: white;
+}
+
+/* Location Marker Animation */
+.location-marker {
+    background-color: #4ECDC4;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 12px;
+    height: 12px;
+}
+
+.location-marker::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #4ECDC4;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
